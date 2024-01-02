@@ -31,3 +31,10 @@
 /Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/obj/Debug/net8.0/FormulaOne.ChatService.pdb
 /Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/obj/Debug/net8.0/FormulaOne.ChatService.genruntimeconfig.cache
 /Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/obj/Debug/net8.0/ref/FormulaOne.ChatService.dll
+/Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/bin/Debug/net8.0/Microsoft.AspNet.SignalR.Core.dll
+/Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/bin/Debug/net8.0/Microsoft.AspNet.SignalR.SystemWeb.dll
+/Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/bin/Debug/net8.0/Microsoft.Owin.dll
+/Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/bin/Debug/net8.0/Microsoft.Owin.Host.SystemWeb.dll
+/Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/bin/Debug/net8.0/Microsoft.Owin.Security.dll
+/Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/brunoribeiro/Documents/projects/chat-app/FormulaOne.ChatService/bin/Debug/net8.0/Owin.dll
