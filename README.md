@@ -1,5 +1,5 @@
 # chat-app
-Side project for practice of yet another fullstack web application on my portfolio.
+Side project for practice purposes, of yet another, fullstack web application for my portfolio.
 
 ## Backend
 .NET, using SignalR as WebSocket connection establisher.
