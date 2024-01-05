@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Row, Form, Col } from "react-bootstrap";
 
 const WaitingRoom = ({joinChatRoom}) => {
+
 const[username, setUsername] = useState();
 const[chatroom, setChatroom] = useState();
 

@@ -7,6 +7,7 @@ import { HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signal
 
 function App() {
   const [connection, setConnection] = useState();
+  const [message, setMessage] = useState();
 
   const joinChatRoom = async (username, chatroom ) => {
     try {
@@ -14,8 +15,13 @@ function App() {
       const connection = HubConnectionBuilder().withUrl("http://localhost:5340").configureLogging(LogLevel.Information).build();
       // setup handler
       connection.on("JoinSpecificChatRoom", (username, msg) => {
-        
+       console.log("msg", msg); 
       });
+
+      connection.on("ReceiveSpecificMessage", (username, msg) => {
+        setMessage(messages => [...messages, {username, msg}]);
+      })
+
       await connection.start();
       await connection.invoke("JoinSpecificChatRoom", {username, chatroom});
     } catch (e) {

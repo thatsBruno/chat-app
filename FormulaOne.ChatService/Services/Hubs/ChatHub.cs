@@ -10,7 +10,7 @@ public class ChatHub : Hub
 
    public ChatHub(SharedDb sharedDb)
    {
-      sharedDb = _sharedDb;
+      _sharedDb = sharedDb;
    }
    
    public async Task JoinChat(UserConnection userConnection)
@@ -21,7 +21,18 @@ public class ChatHub : Hub
    public async Task JoinSpecificChat(UserConnection userConnection)
    {
       await Groups.AddToGroupAsync(Context.ConnectionId ,userConnection.ChatRoom);
+
+      _sharedDb.connections[Context.ConnectionId] = userConnection;
       
-      await Clients.Group(userConnection.ChatRoom).SendAsync("ReceiveMessage", "admin", $"{userConnection.Username} has joined.");
+      await Clients.Group(userConnection.ChatRoom).SendAsync("JoinSpecificChatRoom", "admin", $"{userConnection.Username} has joined.");
+   }
+
+   public async Task SendMessage(string messsage)
+   {
+      if (_sharedDb.connections.TryGetValue(Context.ConnectionId, out UserConnection connection))
+      {
+         await Clients.Group(connection.ChatRoom)
+            .SendAsync("ReceivedSpecificMessage", connection.Username, messsage);
+      }
    }
 }
