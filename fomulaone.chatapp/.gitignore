@@ -10,7 +10,7 @@
 
 # production
 /build
-.dll
+*.dll
 
 # misc
 .DS_Store
