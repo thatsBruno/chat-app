@@ -15,9 +15,6 @@ const ChatRoom = ({messages, sendMessage}) => <div>
         <Col sm={12}>
             <MessageContainer messages={messages} />
         </Col>
-       <Col sm={12}>
-        <SendMessage sendMessage={sendMessage} />
-       </Col> 
     </Row>
 </div>
 
