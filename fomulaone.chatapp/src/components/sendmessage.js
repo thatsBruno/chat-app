@@ -1,8 +1,7 @@
-import { sendMessage } from "@microsoft/signalr/dist/esm/Utils";
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { useState } from "react";
 
-const SendMessage = ({ SendMessage }) => {
+const SendMessage = ({ sendMessage }) => {
     const[msg, setMsg] = useState();
 
     return <Form onSubmit={e => {
