@@ -5,7 +5,7 @@ namespace FormulaOne.ChatService.Persistence;
 
 public class SharedDb
 {
-    private readonly ConcurrentDictionary<string, UserConnection> _connections = new();
+    private readonly ConcurrentDictionary<string, UserConnection> _connections;
 
     public ConcurrentDictionary<string, UserConnection> connections;
 
