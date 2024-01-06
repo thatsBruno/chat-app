@@ -42,7 +42,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div>
       <main>
         <Container>
           <Row className='px5 my-5'>
@@ -51,8 +51,8 @@ function App() {
             </Col>
           </Row>
           { !connection
-            ? <WaitingRoom joinChatRoom={joinChatRoom}></WaitingRoom>
-            : <ChatRoom messages={messages} sendMessage={sendMessage}></ChatRoom>
+            ? <WaitingRoom joinChatRoom={joinChatRoom}/>
+            : <ChatRoom messages={messages} sendMessage={sendMessage}/>
           }
         </Container>
       </main>

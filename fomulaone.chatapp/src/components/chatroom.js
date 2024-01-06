@@ -13,7 +13,7 @@ const ChatRoom = ({ messages }) => {
         </Row>
         <Row className="px-5 py-5">
             <Col sm={12}>
-                <MessageContainer messages={messages}></MessageContainer>
+                <MessageContainer messages={messages}/>
             </Col>
         </Row>
     </div>

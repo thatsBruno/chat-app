@@ -24,7 +24,8 @@ public class ChatHub : Hub
 
       _sharedDb.connections[Context.ConnectionId] = userConnection;
       
-      await Clients.Group(userConnection.ChatRoom).SendAsync("JoinSpecificChatRoom", "admin", $"{userConnection.Username} has joined.");
+      await Clients.Group(userConnection.ChatRoom)
+         .SendAsync("JoinSpecificChatRoom", "admin", $"{userConnection.Username} has joined {userConnection.ChatRoom}.");
    }
 
    public async Task SendMessage(string messsage)
@@ -32,7 +33,7 @@ public class ChatHub : Hub
       if (_sharedDb.connections.TryGetValue(Context.ConnectionId, out UserConnection connection))
       {
          await Clients.Group(connection.ChatRoom)
-            .SendAsync("ReceivedSpecificMessage", connection.Username, messsage);
+            .SendAsync("ReceiveSpecificMessage", connection.Username, messsage);
       }
    }
 }
