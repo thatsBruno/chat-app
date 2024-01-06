@@ -1,9 +1,8 @@
-const MessageContainer = ({messages}) => {
+const MessageContainer = ({ messages }) => {
     return <div>
         {
-            //48:00
-            messages.map((msg, index) => 
-            <table strped bordered>
+            messages.map((msg, index) =>
+            <table>
                 <tr key={index}>
                     <td> {msg.msg} - {msg.username} </td>
                 </tr>

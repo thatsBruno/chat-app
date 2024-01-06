@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WaitingRoom from './components/waitingroom';
 import { useState } from 'react';
-import { HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
+import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 import ChatRoom from './components/chatroom';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       const connection = new HubConnectionBuilder().withUrl("http://localhost:5166/Chat").configureLogging(LogLevel.Information).build();
       // setup handler
       connection.on("JoinSpecificChatRoom", (username, msg) => {
-       console.log("msg", msg); 
+        console.log("msg", msg); 
       });
 
       connection.on("ReceiveSpecificMessage", (username, msg) => {
@@ -25,6 +25,9 @@ function App() {
 
       await connection.start();
       await connection.invoke("JoinSpecificChatRoom", {username, chatroom});
+
+      setConnection(connection);
+
     } catch (e) {
      console.log(e);
     }
@@ -48,8 +51,8 @@ function App() {
             </Col>
           </Row>
           { !connection
-            ? <WaitingRoom joinChatRoom={joinChatRoom} />
-            : <ChatRoom messages={messages} sendMessage={sendMessage} />
+            ? <WaitingRoom joinChatRoom={joinChatRoom}></WaitingRoom>
+            : <ChatRoom messages={messages} sendMessage={sendMessage}></ChatRoom>
           }
         </Container>
       </main>
