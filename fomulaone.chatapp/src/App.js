@@ -8,7 +8,7 @@ import ChatRoom from './components/chatroom';
 
 function App() {
   const [connection, setConnection] = useState();
-  const [messages, setMessages] = useState();
+  const [messages, setMessages] = useState([]);
 
   const joinChatRoom = async (username, chatroom ) => {
     try {
