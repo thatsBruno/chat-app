@@ -5,4 +5,4 @@ Side project for practice purposes, of yet another, fullstack web application fo
 .NET, using SignalR as WebSocket connection establisher.
 
 ## Frontend
-This will be written in {}.
+This will be written in React.
